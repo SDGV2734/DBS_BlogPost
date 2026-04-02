@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import siteConfig from "../site.config";
 import { withBase } from "../utils/helpers";
 
@@ -21,12 +20,5 @@ const {
 ---
 
 <div class:list={["flex items-center gap-2", customClass]}>
-  <Image
-    src={withBase("/space-ahead-logo.png")}
-    alt="Logo"
-    width={logoWidth}
-    height={logoHeight}
-    loading={loading}
-  />
   <span class:list={["sigmar-ff", textSize]}>{siteConfig.title}</span>
 </div>
