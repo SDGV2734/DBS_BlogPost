@@ -32,4 +32,9 @@ export function getPostsByTag(posts: CollectionEntry<'blogs'>[], tagId: string) 
     return filteredPosts;
 }
 
-export const withBase = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+export const withBase = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const normalizedBase = baseUrl === '/' ? '' : baseUrl.replace(/\/+$/, '');
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${normalizedBase}${normalizedPath}` || '/';
+};
