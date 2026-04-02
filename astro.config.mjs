@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import swup from "@swup/astro";
@@ -9,6 +10,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://dbsblogpost.netlify.app",
   base: "/",
+  adapter: netlify(),
   integrations: [
     swup({
       theme: ["overlay", { direction: "to-top" }],
