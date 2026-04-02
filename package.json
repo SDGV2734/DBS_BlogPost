@@ -2,6 +2,9 @@
   "name": "space-ahead",
   "type": "module",
   "version": "0.12.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro build && astro preview",
